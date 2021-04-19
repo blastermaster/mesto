@@ -1,0 +1,11 @@
+.root {
+    width: 100%;
+    min-height : 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', 'arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    position: relative;
+}

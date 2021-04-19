@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="root">
+    <header class="header">
+        <img src="./images/logo.svg" alt="Логотип сайта" class="logo">
+        <h1 class="visually-hidden">Cервис Mesto: интерактивная страница, куда можно добавлять фотографии, удалять их и
+            ставить лайки.</h1>
+    </header>
+    <main class="main">
+        <section class="profile">
+            <div class="profile__userpic-overlay">
+                <img src="./images/userpic.jpg" alt="Аватар" class="profile__userpic">
+            </div>
+            <div class="profile__info">
+                <button type="button" class="button profile__button profile__button_action_edit"
+                    aria-label="Редактировать"></button>
+                <p class="profile__name">Жак-Ив Кусто</p>
+                <p class="profile__about">Исследователь океана</p>
+            </div>
+            <button type="button" class="button profile__button profile__button_action_add"
+                aria-label="Добавить"></button>
+        </section>
+        <section class="elements">
+            <ul class="elements__list">
+                <li class="element">
+                    <img src="./images/montreal.jpeg" alt="Монреаль" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Монреаль</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img src="./images/Helsinki.webp" alt="Хельсинки" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Хельсинки</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img src="./images/Sascachevan.jpeg" alt="Саскачеван" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Саскачеван</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img src="./images/Spb.jpeg" alt="Санет-Петербург" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Санет-Петербург</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img src="./images/Stockholm.jpeg" alt="Стокгольм" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Стокгольм</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img src="./images/Toronto.jpeg" alt="Торонто" class="element__image">
+                    <div class="element__content">
+                        <h2 class="element__title">Торонто</h2>
+                        <button class="element__like button" type="button" aria-label="Нравится"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+        </footer>
+    </main>
+</body>
+
+</html>

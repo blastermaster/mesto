@@ -1,0 +1,10 @@
+.elements {
+    width: 68.75%;
+    
+  }
+  
+  @media (max-width: 420px) {
+    .elements {
+      max-width: 88.125%;
+    }
+  }
