@@ -32,3 +32,14 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/popup/__close-btn/popup__close-btn.css);
+
+@import url(../blocks/change-form/change-form.css);
+@import url(../blocks/change-form/__title/change-form__title.css);
+@import url(../blocks/change-form/__input/change-form__input.css);
+@import url(../blocks/change-form/__submit-btn/change-form__submit-btn.css);

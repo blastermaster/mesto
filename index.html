@@ -56,9 +56,9 @@
                 </li>
 
                 <li class="element">
-                    <img src="./images/Spb.jpeg" alt="Санет-Петербург" class="element__image">
+                    <img src="./images/Spb.jpeg" alt="Санкт-Петербург" class="element__image">
                     <div class="element__content">
-                        <h2 class="element__title">Санет-Петербург</h2>
+                        <h2 class="element__title">Санкт-Петербург</h2>
                         <button class="element__like button" type="button" aria-label="Нравится"></button>
                     </div>
                 </li>
@@ -83,6 +83,20 @@
         <footer class="footer">
             <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
         </footer>
+        <div class="popup">
+            <div class="popup__container">
+                <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+                <form class="change-form" name="profileChangeForm">
+                    <h2 class="change-form__title">Редактировать профиль</h2>
+                    <input type="text" class="change-form__input change-form__input_name_value" name="profileName"
+                        value="" autocomplete="off">
+                    <input type="text" class="change-form__input change-form__input_info_value" name="profileInfo"
+                        value="" autocomplete="off">
+                    <button class="change-form__submit-btn" type="submit" aria-labelledby="Сохранить">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <script src="./scripts/script.js"></script>
     </main>
 </body>
 
