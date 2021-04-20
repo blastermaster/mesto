@@ -5,6 +5,7 @@
     grid-column-gap: 17px;
     grid-row-gap: 16px;
     align-items: end;
+    max-width: 333px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

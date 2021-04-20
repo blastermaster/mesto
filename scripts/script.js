@@ -26,7 +26,7 @@ function formSubmitHandler(evt) {
     evt.preventDefault();
     userName.textContent = inputName.value;
     userInfo.textContent = inputInfo.value;
-    togglePopup();
+    popupClose();
 }
 
 
