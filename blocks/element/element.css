@@ -3,28 +3,3 @@
     border-radius: 10px;
     width: 282px;
   }
-
-  @media screen and (max-width: 980px) {
-    .element {
-      min-height: 36.837vw;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .element {
-      min-height: 54.45vw;
-    }
-  }
-  
-  @media screen and (max-width: 425px) {
-    .element {
-      min-height: 110.11vw;
-    }
-  }
-  
-  @media screen and (max-width: 320px) {
-    .element {
-      min-height: 361px;
-    }
-  }
-  

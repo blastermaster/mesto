@@ -12,22 +12,17 @@
 <body class="root">
     <header class="header">
         <img src="./images/logo.svg" alt="Логотип сайта" class="logo">
-        <h1 class="visually-hidden">Cервис Mesto: интерактивная страница, куда можно добавлять фотографии, удалять их и
-            ставить лайки.</h1>
     </header>
     <main class="main">
         <section class="profile">
-            <div class="profile__userpic-overlay">
-                <img src="./images/userpic.jpg" alt="Аватар" class="profile__userpic">
-            </div>
+            <img src="./images/userpic.jpg" alt="Аватар" class="profile__userpic">
             <div class="profile__info">
-                <button type="button" class="button profile__button profile__button_action_edit"
+                <button type="button" class="profile__button profile__button_action_edit"
                     aria-label="Редактировать"></button>
-                <p class="profile__name">Жак-Ив Кусто</p>
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <p class="profile__about">Исследователь океана</p>
             </div>
-            <button type="button" class="button profile__button profile__button_action_add"
-                aria-label="Добавить"></button>
+            <button type="button" class="profile__button profile__button_action_add" aria-label="Добавить"></button>
         </section>
         <section class="elements">
             <ul class="elements__list">
@@ -80,24 +75,24 @@
                 </li>
             </ul>
         </section>
-        <footer class="footer">
-            <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-        </footer>
-        <div class="popup">
-            <div class="popup__container">
-                <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-                <form class="change-form" name="profileChangeForm">
-                    <h2 class="change-form__title">Редактировать профиль</h2>
-                    <input type="text" class="change-form__input change-form__input_name_value" name="profileName"
-                        value="" autocomplete="off">
-                    <input type="text" class="change-form__input change-form__input_info_value" name="profileInfo"
-                        value="" autocomplete="off">
-                    <button class="change-form__submit-btn" type="submit" aria-labelledby="Сохранить">Сохранить</button>
-                </form>
-            </div>
-        </div>
-        <script src="./scripts/script.js"></script>
     </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+            <form class="change-form" name="profileChangeForm">
+                <h2 class="change-form__title">Редактировать профиль</h2>
+                <input type="text" class="change-form__input change-form__input_name_value" name="profileName" value=""
+                    autocomplete="off">
+                <input type="text" class="change-form__input change-form__input_info_value" name="profileInfo" value=""
+                    autocomplete="off">
+                <button class="change-form__submit-btn" type="submit" aria-labelledby="Сохранить">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
