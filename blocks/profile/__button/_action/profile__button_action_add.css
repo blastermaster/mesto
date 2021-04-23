@@ -18,14 +18,15 @@
 
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 680px) {
     .profile__button_action_add {
-      width: 15.3vw;
+      width: 100%;
+      margin: 0 auto;
       background-size: 16px 16px;
     }
   }
   
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 615px) {
     .profile__button_action_add {
       width: 100%;
     }
