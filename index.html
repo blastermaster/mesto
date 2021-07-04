@@ -26,62 +26,15 @@
         </section>
         <section class="elements">
             <ul class="elements__list">
-                <li class="element">
-                    <img src="./images/montreal.jpeg" alt="Монреаль" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Монреаль</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/Helsinki.webp" alt="Хельсинки" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Хельсинки</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/Sascachevan.jpeg" alt="Саскачеван" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Саскачеван</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/Spb.jpeg" alt="Санкт-Петербург" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Санкт-Петербург</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/Stockholm.jpeg" alt="Стокгольм" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Стокгольм</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/Toronto.jpeg" alt="Торонто" class="element__image">
-                    <div class="element__content">
-                        <h2 class="element__title">Торонто</h2>
-                        <button class="element__like button" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
             </ul>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup" id="popupEdit">
         <div class="popup__container">
-            <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+            <button class="popup__close-btn" type="button" aria-label="Закрыть" id="profCloseBtn"></button>
             <form class="change-form" name="profileChangeForm">
                 <h2 class="change-form__title">Редактировать профиль</h2>
                 <input type="text" class="change-form__input change-form__input_name_value" name="profileName" value=""
@@ -92,6 +45,37 @@
             </form>
         </div>
     </div>
+    <div class="popup" id="popupAdd">
+        <div class="popup__container">
+            <button class="popup__close-btn" type="button" aria-label="Закрыть" id="addCloseBtn"></button>
+            <form class="change-form" name="imgAddForm" id="formAdd">
+                <h2 class="change-form__title">Новое место</h2>
+                <input type="text" class="change-form__input change-form__input_name_value" name="imgName" value=""
+                    placeholder="Название" autocomplete="off" id="pictureName">
+                <input type="url" class="change-form__input change-form__input_info_value" name="imgSrc" value=""
+                    placeholder="Ссылка на картинку" autocomplete="off" id="link">
+                <button class="change-form__submit-btn" type="submit" aria-label="Создать">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup" id="imagePopup">
+        <div class="popup__container popup__container_type_image">
+            <img class="popup__image" src="#" alt="">
+            <p class="popup__image-title"></p>
+            <button class="popup__close-btn" type="button">
+            </button>
+        </div>
+    </div>
+    <template id="element-template">
+        <li class="element">
+            <img class="element__image" src="#" alt=" ">
+            <div class="element__content">
+                <h2 class="element__title"></h2>
+                <button class="element__like button" type="button"></button>
+                <button class="element__delete button" type="button"></button>
+            </div>
+        </li>
+    </template>
     <script src="./scripts/script.js"></script>
 </body>
 
