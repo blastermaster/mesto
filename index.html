@@ -35,7 +35,7 @@
     <div class="popup" id="popupEdit">
         <div class="popup__container">
             <button class="popup__close-btn" type="button" aria-label="Закрыть" id="profCloseBtn"></button>
-            <form class="change-form" name="profileChangeForm">
+            <form class="change-form" name="profileChangeForm" id="formEdit">
                 <h2 class="change-form__title">Редактировать профиль</h2>
                 <input type="text" class="change-form__input change-form__input_name_value" name="profileName" value=""
                     autocomplete="off">
@@ -50,9 +50,9 @@
             <button class="popup__close-btn" type="button" aria-label="Закрыть" id="addCloseBtn"></button>
             <form class="change-form" name="imgAddForm" id="formAdd">
                 <h2 class="change-form__title">Новое место</h2>
-                <input type="text" class="change-form__input change-form__input_name_value" name="imgName" value=""
+                <input type="text" class="change-form__input change-form__input_text_value" name="imgName" value=""
                     placeholder="Название" autocomplete="off" id="pictureName">
-                <input type="url" class="change-form__input change-form__input_info_value" name="imgSrc" value=""
+                <input type="url" class="change-form__input change-form__input_src_value" name="imgSrc" value=""
                     placeholder="Ссылка на картинку" autocomplete="off" id="link">
                 <button class="change-form__submit-btn" type="submit" aria-label="Создать">Создать</button>
             </form>
@@ -60,9 +60,9 @@
     </div>
     <div class="popup" id="imagePopup">
         <div class="popup__container popup__container_type_image">
+            <button class="popup__close-btn" type="button" aria-label="Закрыть" id="previewCloseBtn"></button>
             <img class="popup__image" src="#" alt="">
             <p class="popup__image-title"></p>
-            <button class="popup__close-btn" type="button">
             </button>
         </div>
     </div>
