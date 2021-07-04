@@ -80,8 +80,7 @@ function openEditProfilePopup() {
 //Функция открывает форму добавления изображения
 function openAddCardPopup() {
     openPopup(popupAddCard);
-    imgNameInput.value = '';
-    imgSrcIngut.value = '';
+
 }
 
 //Функция открытия формы
@@ -105,10 +104,6 @@ function formSubmitHandler(evt) {
 }
 
 //Функция открывает попап большой картинки
-function openPopup(popupImage) {
-
-}
-
 
 
 
