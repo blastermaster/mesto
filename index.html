@@ -35,12 +35,20 @@
     <div class="popup" id="popupEdit">
         <div class="popup__container">
             <button class="popup__close-btn" type="button" aria-label="Закрыть" id="profCloseBtn"></button>
-            <form class="change-form" name="profileChangeForm" id="formEdit">
-                <h2 class="change-form__title">Редактировать профиль</h2>
-                <input type="text" class="change-form__input change-form__input_name_value" name="profileName" value=""
-                    autocomplete="off">
-                <input type="text" class="change-form__input change-form__input_info_value" name="profileInfo" value=""
-                    autocomplete="off">
+            <form class="change-form form" name="profileChangeForm" id="formEdit" action="#" method="post" novalidate>
+                <section class="form__section">
+                    <h2 class="change-form__title">Редактировать профиль</h2>
+                    <input type="text" class="change-form__input change-form__input_name_value form__input"
+                        name="profileName" id="profileName" value="" autocomplete="off" required minlength="2"
+                        maxlength="30">
+                    <span class="change-form__input-error form__input-error" id="profileName-error"></span>
+                </section>
+                <section class="form__section">
+                    <input type="text" class="change-form__input change-form__input_info_value form__input"
+                        name="profileInfo" id="profileInfo" value="" autocomplete="off" required minlength="2"
+                        maxlength="30">
+                    <span class="change-form__input-error form__input-error" id="profileInfo-error"></span>
+                </section>
                 <button class="change-form__submit-btn" type="submit" aria-label="Сохранить">Сохранить</button>
             </form>
         </div>
@@ -48,12 +56,20 @@
     <div class="popup" id="popupAdd">
         <div class="popup__container">
             <button class="popup__close-btn" type="button" aria-label="Закрыть" id="addCloseBtn"></button>
-            <form class="change-form" name="imgAddForm" id="formAdd">
-                <h2 class="change-form__title">Новое место</h2>
-                <input type="text" class="change-form__input change-form__input_text_value" name="imgName" value=""
-                    placeholder="Название" autocomplete="off" id="pictureName">
-                <input type="url" class="change-form__input change-form__input_src_value" name="imgSrc" value=""
-                    placeholder="Ссылка на картинку" autocomplete="off" id="link">
+            <form class="change-form form" name="imgAddForm" id="formAdd" action="#" method="post" novalidate>
+                <section class="form__section">
+                    <h2 class="change-form__title">Новое место</h2>
+                    <input type="text" class="change-form__input change-form__input_text_value form__input"
+                        name="imgName" value="" placeholder="Название" autocomplete="off" id="imgName" required
+                        minlength="2">
+                    <span class="change-form__input-error form__input-error" id="imgName-error"></span>
+                </section>
+                <section class="form__section">
+                    <input type="url" class="change-form__input change-form__input_src_value form__input" name="imgSrc"
+                        value="" placeholder="Ссылка на картинку" autocomplete="off" id="imgSrc" required minlength="2"
+                        maxlength="30">
+                    <span class="change-form__input-error form__input-error" id="imgSrc-error"></span>
+                </section>
                 <button class="change-form__submit-btn" type="submit" aria-label="Создать">Создать</button>
             </form>
         </div>
@@ -75,7 +91,9 @@
             </div>
         </li>
     </template>
+    <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ const likeBtn = document.querySelector('.element__like');
 const addButton = document.querySelector('.profile__button_action_add');
 const popupAddCard = document.querySelector('#popupAdd');
 const imgNameInput = document.querySelector('#imgName');
-const imgSrcIngut = document.querySelector('#imgSrc');
+const imgSrcInput = document.querySelector('#imgSrc');
 const elementBlock = document.querySelector('.elements__list');
 
 
@@ -23,38 +23,12 @@ const formEditInfo = document.querySelector('#formEdit');
 const formAddCard = document.querySelector('#formAdd');
 const imgName = document.querySelector('.change-form__input_text_value');
 const imgSrc = document.querySelector('.change-form__input_src_value');
-// Массив карточек
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
+
 
 
 //Ф-ция перебора
-initialCards.forEach(function(element){
-renderCard(createCard(element));
+initialCards.forEach(function (element) {
+    renderCard(createCard(element), listElements);
 })
 
 //Ф-ция создания карточки
@@ -72,10 +46,10 @@ function createCard(element) {
 }
 
 //Ф-ция рендера карточки
-function renderCard(card) {
-    const listElements = document.querySelector('.elements__list');
-    listElements.prepend(card);
+function renderCard(card, container) {
+    container.prepend(card);
 }
+
 
 
 //Функция ставил или убирает лайк
@@ -116,24 +90,24 @@ function formSubmitHandler(evt) {
     closePopup(evt);
 }
 
-//Функция открывает попап большой картинки
+
 function formSubmitHandlerAddCard(evt) {
     evt.preventDefault();
     const itemInfo = {
         name: imgName.value,
         link: imgSrc.value
-    }; 
-    renderCard(createCard(itemInfo));
+    };
+    renderCard(createCard(itemInfo), listElements);
     closePopup(evt);
     formAddCard.reset();
 }
-
+//Функция открывает попап большой картинки
 function openPopupPreview(evt) {
     const previewImg = document.querySelector('.popup__image');
-    const previwText = document.querySelector('.popup__image-title');
+    const previewText = document.querySelector('.popup__image-title');
 
     previewImg.src = evt.target.src;
-    previwText.textContent = evt.target.alt;
+    previewText.textContent = evt.target.alt;
 
     openPopup(popupImage);
 
