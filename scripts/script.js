@@ -8,6 +8,8 @@ const inputName = document.querySelector('.change-form__input_name_value');
 const userInfo = document.querySelector('.profile__about');
 const inputInfo = document.querySelector('.change-form__input_info_value');
 
+const popupElements = document.querySelectorAll('.popup');
+
 const listElements = document.querySelector('.elements__list');
 const likeBtn = document.querySelector('.element__like');
 const addButton = document.querySelector('.profile__button_action_add');
@@ -82,6 +84,25 @@ function closePopup(evt) {
     evt.target.closest('.popup').classList.remove('popup_opened');
 }
 
+//Функция закрытия формы кликом на оверлей
+const closePopupByClickOnOverlay = function (evt) {
+    if (evt.target != evt.currentTarget) {
+        return
+    }
+    closePopup(evt);
+
+}
+
+const closePopupByClickOnEsc = function (evt) {
+    console.log(evt);
+    if (evt.key !== 'Escape') {
+        return
+    }
+    closePopup(evt);
+}
+
+
+
 //Функция отправляет форму пользователя
 function formSubmitHandler(evt) {
     evt.preventDefault();
@@ -121,4 +142,5 @@ profCloseBtn.addEventListener('click', closePopup); // закрывает фор
 addCloseBtn.addEventListener('click', closePopup); // закрывает форму добавления картинки
 addButton.addEventListener('click', openAddCardPopup); // открывает форму добавления изображения
 previewCloseBtn.addEventListener('click', closePopup);
-
+popupAddCard.addEventListener('click', closePopupByClickOnOverlay);
+document.addEventListener('keydown', closePopupByClickOnEsc);
