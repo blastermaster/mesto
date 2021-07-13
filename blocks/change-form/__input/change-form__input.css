@@ -25,3 +25,8 @@
     margin-top: 75px;
   }
 }
+
+
+.change-form__input:invalid {
+  border-bottom: 1px solid red;
+}
