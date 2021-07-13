@@ -82,6 +82,7 @@ function openPopup(popup) {
 //Функция закрывает форму
 function closePopup(evt) {
     evt.target.closest('.popup').classList.remove('popup_opened');
+    formAddCard.reset();
 }
 
 //Функция закрытия формы кликом на оверлей
@@ -143,4 +144,9 @@ addCloseBtn.addEventListener('click', closePopup); // закрывает фор�
 addButton.addEventListener('click', openAddCardPopup); // открывает форму добавления изображения
 previewCloseBtn.addEventListener('click', closePopup);
 popupAddCard.addEventListener('click', closePopupByClickOnOverlay);
-document.addEventListener('keydown', closePopupByClickOnEsc);
+popupEditProfile.addEventListener('click', closePopupByClickOnOverlay);
+document.addEventListener('keydown', (evt) => {
+    if (evt.key == 'Escape') {
+        closePopup({ target: document.querySelector('.popup_opened .popup__close-btn') });
+    }
+});
