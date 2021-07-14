@@ -1,3 +1,12 @@
+const config = {
+    formSelector: ".change-form",
+    inputSelector: ".change-form__input",
+    submitButtonSelector: ".change-form__submit-btn",
+    inactiveButtonClass: "change-form__submit-btn_inactive",
+    inputErrorClass: ".change-form__input-error",
+    errorClass: 'change-form__input-error_active'
+}
+
 const showInputError = (inputElement, errorMessage, config) => {
     const formSectionElement = inputElement.closest(".form__section");
     const errorElement = formSectionElement.querySelector(config.inputErrorClass);
@@ -82,14 +91,5 @@ const enableValidation = (config) => {
         setEventListeners(formElements, config)
     });
 };
-
-const config = {
-    formSelector: ".change-form",
-    inputSelector: ".change-form__input",
-    submitButtonSelector: ".change-form__submit-btn",
-    inactiveButtonClass: "change-form__submit-btn_inactive",
-    inputErrorClass: ".change-form__input-error",
-    errorClass: 'change-form__input-error_active'
-}
 
 enableValidation(config);
