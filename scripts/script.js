@@ -67,11 +67,13 @@ function openEditProfilePopup() {
     openPopup(popupEditProfile);
     inputName.value = userName.textContent;
     inputInfo.value = userInfo.textContent;
+    deleteErrors(popupAddCard, config);
 }
 
 //Функция открывает форму добавления изображения
 function openAddCardPopup() {
     openPopup(popupAddCard);
+    deleteErrors(popupAddCard, config);
 
 }
 

@@ -14,6 +14,13 @@ const hideInputError = (inputElement, config) => {
     errorElement.classList.remove(config.errorClass);
 };
 
+const deleteErrors = (formElement, config) => {
+    const inputList = formElement.querySelectorAll(config.inputSelector);
+    inputList.forEach((inputElement) => {
+        hideInputError(inputElement, config);
+    });
+}
+
 
 const checkInputValidity = (formElement, inputElement, config) => {
     const isInputNotValid = !inputElement.validity.valid;
