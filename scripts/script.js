@@ -1,30 +1,32 @@
 const editButton = document.querySelector('.profile__button_action_edit');
-const popupEditProfile = document.querySelector('#popupEdit');
-const profCloseBtn = document.querySelector('#profCloseBtn');
-const addCloseBtn = document.querySelector('#addCloseBtn');
+const addButton = document.querySelector('.profile__button_action_add');
+
+const popupEditProfile = document.querySelector('#popupEdit'); //Попап редактррования профиля
+const profCloseBtn = document.querySelector('#profCloseBtn'); //Кнопка закрытия профилья
+const addCloseBtn = document.querySelector('#addCloseBtn'); //Кнопка закртия попапа добавления карточки
 const previewCloseBtn = document.querySelector('#previewCloseBtn');
 const userName = document.querySelector('.profile__name');
-const inputName = document.querySelector('.change-form__input_name_value');
+const inputName = document.querySelector('.popup__input_type_name'); //Поле имени
 const userInfo = document.querySelector('.profile__about');
-const inputInfo = document.querySelector('.change-form__input_info_value');
+const inputInfo = document.querySelector('.popup__input_type_description'); //Поле описания ползователя
 
-const popupElements = document.querySelectorAll('.popup');
+const popupElements = document.querySelectorAll('.popup'); // Попапы
 
 const listElements = document.querySelector('.elements__list');
 const likeBtn = document.querySelector('.element__like');
-const addButton = document.querySelector('.profile__button_action_add');
+
 const popupAddCard = document.querySelector('#popupAdd');
-const imgNameInput = document.querySelector('#imgName');
-const imgSrcInput = document.querySelector('#imgSrc');
+const imgNameInput = document.querySelector('#place');
+const imgSrcInput = document.querySelector('#link');
 const elementBlock = document.querySelector('.elements__list');
 
 
 const popupImage = document.querySelector('#imagePopup');
 const bigImage = document.querySelector('.popup__image');
-const formEditInfo = document.querySelector('#formEdit');
-const formAddCard = document.querySelector('#formAdd');
-const imgName = document.querySelector('.change-form__input_text_value');
-const imgSrc = document.querySelector('.change-form__input_src_value');
+const formEditInfo = document.querySelector('#formEdit');//Форма редактирования
+const formAddCard = document.querySelector('#formAdd'); //Форма добавления
+const imgName = document.querySelector('.popup__input_type_place'); //Поле названия места
+const imgSrc = document.querySelector('.popup__input_type_link'); //Поле ссылки на место
 
 
 
@@ -74,7 +76,6 @@ function openEditProfilePopup() {
 function openAddCardPopup() {
     openPopup(popupAddCard);
     deleteErrors(popupAddCard, config);
-
 }
 
 //Функция открытия формы
@@ -93,7 +94,6 @@ const closePopupByClickOnOverlay = function (evt) {
         return
     }
     closePopup(evt);
-
 }
 
 const closePopupByClickOnEsc = function (evt) {
@@ -149,6 +149,6 @@ popupAddCard.addEventListener('click', closePopupByClickOnOverlay);
 popupEditProfile.addEventListener('click', closePopupByClickOnOverlay);
 document.addEventListener('keydown', (evt) => {
     if (evt.key == 'Escape') {
-        closePopup({ target: document.querySelector('.popup_opened .popup__close-btn') });
+        closePopup({ target: document.querySelector('.popup_opened .popup__close') });
     }
 });
