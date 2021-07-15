@@ -16,7 +16,7 @@
   }
   
   .change-form__submit-btn:hover {
-    opacity: .8;
+    opacity: .9;
   }
   
   @media (max-width: 420px) {
