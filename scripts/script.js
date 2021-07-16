@@ -90,7 +90,7 @@ function closePopup(evt) {
 
 //Функция закрытия формы кликом на оверлей
 const closePopupByClickOnOverlay = function (evt) {
-    if (evt.target != evt.currentTarget) {
+    if (evt.target !== evt.currentTarget) {
         return
     }
     closePopup(evt);
