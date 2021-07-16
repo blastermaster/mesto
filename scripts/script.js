@@ -78,10 +78,12 @@ function openAddCardPopup() {
 
 //Функция открытия формы
 function openPopup(popup) {
+    document.addEventListener('keydown', closePopupByClickOnEsc);
     popup.classList.add('popup_opened');
 }
 //Функция закрывает форму
 function closePopup(evt) {
+    document.removeEventListener('keydown', closePopupByClickOnEsc);
     evt.target.closest('.popup').classList.remove('popup_opened');
     formAddCard.reset();
 }
