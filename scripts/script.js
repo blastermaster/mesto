@@ -96,7 +96,6 @@ const closePopupByClickOnOverlay = function (evt) {
 
 //Функция закрытия формы Esc
 const closePopupByClickOnEsc = function (evt) {
-    console.log(evt);
     if (evt.key !== 'Escape') {
         return
     }
