@@ -6,7 +6,7 @@ const config = {
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
 }
-console.log(config.inactiveButtonClass)
+
 //Ф-ция находит и перебирает все формы на странице.
 const enableValidation = (config) => {
     const formList = Array.from(document.querySelectorAll(config.formSelector));
@@ -82,10 +82,12 @@ const hideInputError = (formElement, inputElement, config) => {
 };
 // Функция сброса ошибок 
 const deleteErrors = (formElement, config) => {
-    const inputList = formElement.querySelectorAll(config.inputSelector);
+    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+    const buttonElement = formElement.querySelector(config.submitButtonSelector);
     inputList.forEach((inputElement) => {
         hideInputError(formElement, inputElement, config);
     })
+    toggleButtonState(inputList, buttonElement, config);
 };
 
 enableValidation(config);

@@ -28,8 +28,6 @@ const formAddCard = document.querySelector('#formAdd'); //Форма добав�
 const imgName = document.querySelector('.popup__input_type_place'); //Поле названия места
 const imgSrc = document.querySelector('.popup__input_type_link'); //Поле ссылки на место
 
-
-
 //Ф-ция перебора
 initialCards.forEach(function (element) {
     renderCard(createCard(element), listElements);
@@ -53,7 +51,6 @@ function createCard(element) {
 function renderCard(card, container) {
     container.prepend(card);
 }
-
 
 
 //Функция ставил или убирает лайк
@@ -97,6 +94,7 @@ const closePopupByClickOnOverlay = function (evt) {
     closePopup(evt);
 }
 
+//Функция закрытия формы Esc
 const closePopupByClickOnEsc = function (evt) {
     console.log(evt);
     if (evt.key !== 'Escape') {
