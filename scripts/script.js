@@ -148,6 +148,8 @@ addButton.addEventListener('click', openAddCardPopup); // открывает ф�
 previewCloseBtn.addEventListener('click', closePopup);
 popupAddCard.addEventListener('click', closePopupByClickOnOverlay);
 popupEditProfile.addEventListener('click', closePopupByClickOnOverlay);
+popupImage.addEventListener('click', closePopupByClickOnOverlay);
+
 document.addEventListener('keydown', (evt) => {
     if (evt.key == 'Escape') {
         closePopup({ target: document.querySelector('.popup_opened .popup__close') });
