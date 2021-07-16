@@ -66,10 +66,11 @@ function deleteElement(evt) {
 }
 //Функция открывает форму и берет значения из профиля
 function openEditProfilePopup() {
+    enableValidation(config);
     openPopup(popupEditProfile);
     inputName.value = userName.textContent;
     inputInfo.value = userInfo.textContent;
-    deleteErrors(popupAddCard, config);
+    deleteErrors(popupEditProfile, config);
 }
 
 //Функция открывает форму добавления изображения
@@ -121,7 +122,9 @@ function formSubmitHandlerAddCard(evt) {
         name: imgName.value,
         link: imgSrc.value
     };
+    deleteErrors(popupAddCard, config);
     renderCard(createCard(itemInfo), listElements);
+    // setSubmitButtonInactive( )
     closePopup(evt);
     formAddCard.reset();
 }

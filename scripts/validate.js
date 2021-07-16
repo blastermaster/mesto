@@ -23,7 +23,7 @@ const enableValidation = (config) => {
 const setEventListeners = (formElement, config) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
     const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement, config);
+    
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
             isValid(formElement, inputElement, config);
@@ -68,7 +68,7 @@ const isValid = (formElement, inputElement, config) => {
 // Функция показывает ошибки
 const showInputError = (formElement, inputElement, errorMessage, config) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    console.log(errorElement);
+
     inputElement.classList.add(config.inputErrorClass);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(config.errorClass);
