@@ -134,6 +134,7 @@ function openPopupPreview(evt) {
     const previewText = document.querySelector('.popup__image-title');
 
     previewImg.src = evt.target.src;
+    previewImg.alt = evt.target.alt;
     previewText.textContent = evt.target.alt;
 
     openPopup(popupImage);
