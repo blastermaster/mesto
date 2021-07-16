@@ -101,7 +101,8 @@ const closePopupByClickOnEsc = function (evt) {
     if (evt.key !== 'Escape') {
         return
     }
-    closePopup(evt);
+    const openedPopup = document.querySelector('.popup_opened .popup__close');
+    closePopup({ target: openedPopup});
 }
 
 
@@ -150,9 +151,3 @@ previewCloseBtn.addEventListener('click', closePopup);
 popupAddCard.addEventListener('click', closePopupByClickOnOverlay);
 popupEditProfile.addEventListener('click', closePopupByClickOnOverlay);
 popupImage.addEventListener('click', closePopupByClickOnOverlay);
-
-document.addEventListener('keydown', (evt) => {
-    if (evt.key == 'Escape') {
-        closePopup({ target: document.querySelector('.popup_opened .popup__close') });
-    }
-});
