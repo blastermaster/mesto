@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
     constructor (data, cardSelector){
         this._name = data.name;
         this._link = data.link;
@@ -40,9 +40,6 @@ class Card {
         this._element.querySelector('.element__image').addEventListener('click', () => {
             this._handleOpenPreview();
         })
-        this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._handleClosePreview();
-        })
     }
     //Тоггл лайка
     _handleLikeClick() {
@@ -64,11 +61,4 @@ class Card {
         document.querySelector('#imagePopup').classList.add('popup_opened');
     }
 }
-    
-initialCards.forEach((item) => {
-    const card = new Card(item, '#element-template');
-    const cardElement = card.generateCard();
-
-    document.querySelector('.elements__list').append(cardElement);
-    });
 

@@ -1,3 +1,7 @@
+import { initialCards } from "./initial-сards.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
 const editButton = document.querySelector('.profile__button_action_edit');
 const addButton = document.querySelector('.profile__button_action_add');
 
@@ -28,39 +32,15 @@ const formAddCard = document.querySelector('#formAdd'); //Форма добав�
 const imgName = document.querySelector('.popup__input_type_place'); //Поле названия места
 const imgSrc = document.querySelector('.popup__input_type_link'); //Поле ссылки на место
 
-//Ф-ция перебора
-initialCards.forEach(function (element) {
-    renderCard(createCard(element), listElements);
-})
-
-//Ф-ция создания карточки
-function createCard(element) {
-    const itemTemplateContent = document.querySelector('#element-template').content;
-    const itemsElement = itemTemplateContent.cloneNode(true);
-    const elementImage = itemsElement.querySelector('.element__image');
-    elementImage.src = element.link;
-    elementImage.alt = element.name;
-    itemsElement.querySelector('.element__title').textContent = element.name;
-    itemsElement.querySelector('.element__like').addEventListener('click', liked);
-    itemsElement.querySelector('.element__delete').addEventListener('click', deleteElement);
-    elementImage.addEventListener('click', openPopupPreview);
-    return itemsElement;
-}
-
-//Ф-ция рендера карточки
-function renderCard(card, container) {
-    container.prepend(card);
-}
 
 
-//Функция ставил или убирает лайк
-function liked(evt) {
-    evt.target.classList.toggle('element__like_liked')
-}
-//Функция удаляет карточку
-function deleteElement(evt) {
-    evt.target.closest('.element').remove();
-}
+initialCards.forEach((item) => {
+    const card = new Card(item, '#element-template');
+    const cardElement = card.generateCard();
+
+    document.querySelector('.elements__list').append(cardElement);
+    });
+
 //Функция открывает форму и берет значения из профиля
 function openEditProfilePopup() {
     enableValidation(config);
@@ -124,22 +104,10 @@ function formSubmitHandlerAddCard(evt) {
     };
     deleteErrors(popupAddCard, config);
     renderCard(createCard(itemInfo), listElements);
-    // setSubmitButtonInactive( )
     closePopup(evt);
     formAddCard.reset();
 }
-//Функция открывает попап большой картинки
-function openPopupPreview(evt) {
-    const previewImg = document.querySelector('.popup__image');
-    const previewText = document.querySelector('.popup__image-title');
 
-    previewImg.src = evt.target.src;
-    previewImg.alt = evt.target.alt;
-    previewText.textContent = evt.target.alt;
-
-    openPopup(popupImage);
-
-}
 
 
 formEditInfo.addEventListener('submit', formSubmitHandler); //отправка формы Info
